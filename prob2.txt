@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="index.css" rel="stylesheet" type="text/css" />
+  
+  <style>
+    body{
+      font-family: 'Aler'
+    }
+    a:hover{
+      background-color: #98AFC7;
+    }
+    a{
+      text-decoration:none;
+    }
+    .small{
+      font-size: 10px;
+    }
+    .img{
+     
+      height: 300px;
+      width: 300px;
+    }
+    .text{
+      color: white;
+      
+      margin-top: -80px;
+      
+    }
+    
+  </style>
+  <body>
+    <div>
+   <div class="back">
+     <img class="img" src="https://images.pexels.com/photos/38554/girl-people-landscape-sun-38554.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb">
+     <div class="text">
+     <p>Chris Smith</p>
+     <p>MADT Students</p>
+     </div>
+   </div>
+<p>12:34 PM local time</p>
+<div>
+  <a href="">View Prefernces</a><br>
+    <a href="">Open  account settings</a><br>
+      <a href="">Edit Your Profile</a><br>
+      <a href="">View Your file</a><br>
+        <a href="">Set Yourself away</a>
+</div>
+     </div>
+  
+  </body>
+</html>

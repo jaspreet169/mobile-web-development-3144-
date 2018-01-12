@@ -1,0 +1,337 @@
+ USE mytestDB;
+Database changed
+MariaDB [mytestDB]> SHOW TABLES;
++--------------------+
+| Tables_in_mytestdb |
++--------------------+
+| department         |
+| s                  |
+| student            |
+| t                  |
++--------------------+
+4 rows in set (0.00 sec)
+
+MariaDB [mytestDB]> SELECT * FROM department;
++------+--------+------+
+| id   | dnm    | age  |
++------+--------+------+
+|    1 | heena  |   25 |
+|    2 | deepak |   19 |
+|    3 | jim    |   20 |
+|    5 | anny   |   19 |
+|    4 | tim    |   15 |
++------+--------+------+
+5 rows in set (0.07 sec)
+
+MariaDB [mytestDB]> ALTER table  department ADD city varchar(20) after age;
+Query OK, 0 rows affected (0.71 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [mytestDB]> SELECT * FROM department;
++------+--------+------+------+
+| id   | dnm    | age  | city |
++------+--------+------+------+
+|    1 | heena  |   25 | NULL |
+|    2 | deepak |   19 | NULL |
+|    3 | jim    |   20 | NULL |
+|    5 | anny   |   19 | NULL |
+|    4 | tim    |   15 | NULL |
++------+--------+------+------+
+5 rows in set (0.00 sec)
+
+MariaDB [mytestDB]> ALTER table  department ADD sal varchar(20) after age;
+Query OK, 0 rows affected (0.27 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [mytestDB]> SELECT * FROM department;
++------+--------+------+------+------+
+| id   | dnm    | age  | sal  | city |
++------+--------+------+------+------+
+|    1 | heena  |   25 | NULL | NULL |
+|    2 | deepak |   19 | NULL | NULL |
+|    3 | jim    |   20 | NULL | NULL |
+|    5 | anny   |   19 | NULL | NULL |
+|    4 | tim    |   15 | NULL | NULL |
++------+--------+------+------+------+
+5 rows in set (0.00 sec)
+
+MariaDB [mytestDB]> UPDATE department  SET city="toronto" WHERE id=3;
+Query OK, 1 row affected (0.10 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [mytestDB]> SELECT * FROM department;
++------+--------+------+------+---------+
+| id   | dnm    | age  | sal  | city    |
++------+--------+------+------+---------+
+|    1 | heena  |   25 | NULL | NULL    |
+|    2 | deepak |   19 | NULL | NULL    |
+|    3 | jim    |   20 | NULL | toronto |
+|    5 | anny   |   19 | NULL | NULL    |
+|    4 | tim    |   15 | NULL | NULL    |
++------+--------+------+------+---------+
+5 rows in set (0.00 sec)
+
+MariaDB [mytestDB]> UPDATE department  SET city="delhi", sal=45000 WHERE id=4;
+Query OK, 1 row affected (0.06 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [mytestDB]> UPDATE department  SET city="brampton", sal=30000 WHERE id=1;
+Query OK, 1 row affected (0.05 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [mytestDB]> UPDATE department  SET city="vancouver", sal=30000 WHERE id=2;
+Query OK, 1 row affected (0.03 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [mytestDB]> UPDATE department  SET city="mumbai", sal=30000 WHERE id=5;
+Query OK, 1 row affected (0.04 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [mytestDB]> UPDATE department  SET city="pune", sal=10000 WHERE id=3;
+Query OK, 1 row affected (0.08 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [mytestDB]> SELECT * FROM department;
++------+--------+------+-------+-----------+
+| id   | dnm    | age  | sal   | city      |
++------+--------+------+-------+-----------+
+|    1 | heena  |   25 | 30000 | brampton  |
+|    2 | deepak |   19 | 30000 | vancouver |
+|    3 | jim    |   20 | 10000 | pune      |
+|    5 | anny   |   19 | 30000 | mumbai    |
+|    4 | tim    |   15 | 45000 | delhi     |
++------+--------+------+-------+-----------+
+5 rows in set (0.00 sec)
+
+MariaDB [mytestDB]> DELETE from department WHERE id=4;
+Query OK, 1 row affected (0.03 sec)
+
+MariaDB [mytestDB]> SELECT * FROM department;
++------+--------+------+-------+-----------+
+| id   | dnm    | age  | sal   | city      |
++------+--------+------+-------+-----------+
+|    1 | heena  |   25 | 30000 | brampton  |
+|    2 | deepak |   19 | 30000 | vancouver |
+|    3 | jim    |   20 | 10000 | pune      |
+|    5 | anny   |   19 | 30000 | mumbai    |
++------+--------+------+-------+-----------+
+4 rows in set (0.00 sec)
+
+MariaDB [mytestDB]> SELECT VERSION();
++-----------------+
+| VERSION()       |
++-----------------+
+| 10.1.21-MariaDB |
++-----------------+
+1 row in set (0.00 sec)
+
+MariaDB [mytestDB]> SELECT USER;
+ERROR 1054 (42S22): Unknown column 'USER' in 'field list'
+MariaDB [mytestDB]> SELECT USER();
++----------------+
+| USER()         |
++----------------+
+| root@localhost |
++----------------+
+1 row in set (0.00 sec)
+MariaDB [mytestDB]> SELECT SYSDATE();
++---------------------+
+| SYSDATE()           |
++---------------------+
+| 2017-09-07 18:05:05 |
++---------------------+
+1 row in set (0.00 sec)
+
+MariaDB [mytestDB]> SELECT CURRENT_DATE();
++----------------+
+| CURRENT_DATE() |
++----------------+
+| 2017-09-07     |
++----------------+
+1 row in set (0.00 sec)
+
+MariaDB [mytestDB]> SELECT CURTIME();
++-----------+
+| CURTIME() |
++-----------+
+| 18:07:14  |
++-----------+
+1 row in set (0.00 sec)
+
+MariaDB [mytestDB]> SELECT CURRENT_TIME();
++----------------+
+| CURRENT_TIME() |
++----------------+
+| 18:07:33       |
++----------------+
+1 row in set (0.00 sec)
+
+MariaDB [mytestDB]> SELECT CURRENT_TIMEATAMP();
+ERROR 1305 (42000): FUNCTION mytestdb.CURRENT_TIMEATAMP does not exist
+MariaDB [mytestDB]> SELECT AVG(sal) from department;
++----------+
+| AVG(sal) |
++----------+
+|    25000 |
++----------+
+1 row in set (0.00 sec)
+
+MariaDB [mytestDB]> SELECT sysdate(), AVG(sal) from department;
++---------------------+----------+
+| sysdate()           | AVG(sal) |
++---------------------+----------+
+| 2017-09-07 18:12:04 |    25000 |
++---------------------+----------+
+1 row in set (0.00 sec)
+
+MariaDB [mytestDB]> SELECT NOW(), id,dnm from department;
++---------------------+------+--------+
+| NOW()               | id   | dnm    |
++---------------------+------+--------+
+| 2017-09-07 18:14:27 |    1 | heena  |
+| 2017-09-07 18:14:27 |    2 | deepak |
+| 2017-09-07 18:14:27 |    3 | jim    |
+| 2017-09-07 18:14:27 |    5 | anny   |
++---------------------+------+--------+
+4 rows in set (0.00 sec)
+
+MariaDB [mytestDB]> SELECT CONCAT(dnm,'living in',city) from department;
++------------------------------+
+| CONCAT(dnm,'living in',city) |
++------------------------------+
+| heenaliving inbrampton       |
+| deepakliving invancouver     |
+| jimliving inpune             |
+| annyliving inmumbai          |
++------------------------------+
+4 rows in set (0.03 sec)
+
+MariaDB [mytestDB]> SELECT CONCAT(dnm,' living in ',city) from department;
++--------------------------------+
+| CONCAT(dnm,' living in ',city) |
++--------------------------------+
+| heena living in brampton       |
+| deepak living in vancouver     |
+| jim living in pune             |
+| anny living in mumbai          |
++--------------------------------+
+
+MariaDB [mytestDB]>  SELECT FORMAT(12332.123456, 4);
++-------------------------+
+| FORMAT(12332.123456, 4) |
++-------------------------+
+| 12,332.1235             |
++-------------------------+
+1 row in set (0.00 sec)
+
+MariaDB [mytestDB]>  SELECT FORMAT(12332.123456, 2);
++-------------------------+
+| FORMAT(12332.123456, 2) |
++-------------------------+
+| 12,332.12               |
++-------------------------+
+1 row in set (0.00 sec)
+
+MariaDB [mytestDB]>  SELECT FORMAT(12332.123456, 0);
++-------------------------+
+| FORMAT(12332.123456, 0) |
++-------------------------+
+| 12,332                  |
++-------------------------+
+1 row in set (0.00 sec)
+
+MariaDB [mytestDB]>  SELECT FORMAT(12332.123456, 2,'de_DE');
++---------------------------------+
+| FORMAT(12332.123456, 2,'de_DE') |
++---------------------------------+
+| 12.332,12                       |
++---------------------------------+
+1 row in set (0.01 sec)
+MariaDB [mytestDB]> show create  table department\G
+*************************** 1. row ***************************
+       Table: department
+Create Table: CREATE TABLE `department` (
+  `id` int(2) DEFAULT NULL,
+  `dnm` varchar(25) DEFAULT NULL,
+  `age` int(10) DEFAULT NULL,
+  `sal` varchar(20) DEFAULT NULL,
+  `city` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
+
+MariaDB [mytestDB]> CREATE TABLE manufacturers
+    -> (code integer(3) PRIMARY KEY,
+    -> name varchar(50) NOT NULL);
+Query OK, 0 rows affected (0.23 sec)
+
+MariaDB [mytestDB]> CREATE TABLE products( code INTEGER, name VARCHAR(230) NOT NULL, price DECIMAL NOT NULL, manufacturer INTEGER NOT NULL, PRIMARY KEY (code), FOREIGN KEY(manufacturer) REFERENCES Manufacturers (code));
+Query OK, 0 rows affected (0.25 sec)
+
+MariaDB [mytestDB]> INSERT INTO  manufacturers(code,name)VALUES (1,'sony');
+Query OK, 1 row affected (0.05 sec)
+
+MariaDB [mytestDB]> INSERT INTO  manufacturers(code,name)VALUES (2,'creative labs');
+Query OK, 1 row affected (0.05 sec)
+
+MariaDB [mytestDB]> INSERT INTO  manufacturers(code,name)VALUES (3,'hewlett packard');
+Query OK, 1 row affected (0.05 sec)
+
+MariaDB [mytestDB]> INSERT INTO  manufacturers(code,name)VALUES (4,'iomega');
+Query OK, 1 row affected (0.03 sec)
+
+MariaDB [mytestDB]> INSERT INTO  manufacturers(code,name)VALUES (5,'fujitsu');
+Query OK, 1 row affected (0.05 sec)
+
+MariaDB [mytestDB]> INSERT INTO  manufacturers(code,name)VALUES (6,'winchester');
+Query OK, 1 row affected (0.05 sec)
+
+MariaDB [mytestDB]> INSERT INTO  products(code,name,price,manufacturer)VALUES (1,'hard drive',240,5);
+Query OK, 1 row affected (0.06 sec)
+
+MariaDB [mytestDB]> INSERT INTO  products(code,name,price,manufacturer)VALUES (2,'memory',123,6);
+Query OK, 1 row affected (0.04 sec)
+
+MariaDB [mytestDB]> INSERT INTO  products(code,name,price,manufacturer)VALUES (3,'zip drive',150,4);
+Query OK, 1 row affected (0.02 sec)
+
+MariaDB [mytestDB]> INSERT INTO  products(code,name,price,manufacturer)VALUES (4,'floppy disk',5,6);
+Query OK, 1 row affected (0.02 sec)
+
+MariaDB [mytestDB]> INSERT INTO  products(code,name,price,manufacturer)VALUES (5,'floppy monitor'240,1);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '240,1)' at line 1
+MariaDB [mytestDB]> INSERT INTO  products(code,name,price,manufacturer)VALUES (5,'floppy monitor',240,1);
+Query OK, 1 row affected (0.05 sec)
+
+MariaDB [mytestDB]> INSERT INTO  products(code,name,price,manufacturer)VALUES (6,'cd drive',90,2);
+Query OK, 1 row affected (0.05 sec)
+
+MariaDB [mytestDB]> INSERT INTO  products(code,name,price,manufacturer)VALUES (7,'dvd drive',270,3);
+Query OK, 1 row affected (0.05 sec)
+
+MariaDB [mytestDB]> SELECT * from products;
++------+----------------+-------+--------------+
+| code | name           | price | manufacturer |
++------+----------------+-------+--------------+
+|    1 | hard drive     |   240 |            5 |
+|    2 | memory         |   123 |            6 |
+|    3 | zip drive      |   150 |            4 |
+|    4 | floppy disk    |     5 |            6 |
+|    5 | floppy monitor |   240 |            1 |
+|    6 | cd drive       |    90 |            2 |
+|    7 | dvd drive      |   270 |            3 |
++------+----------------+-------+--------------+
+7 rows in set (0.00 sec)
+
+MariaDB [mytestDB]> SELECT * from manufacturer;
+ERROR 1146 (42S02): Table 'mytestdb.manufacturer' doesn't exist
+MariaDB [mytestDB]> SELECT * from manufacturers;
++------+-----------------+
+| code | name            |
++------+-----------------+
+|    1 | sony            |
+|    2 | creative labs   |
+|    3 | hewlett packard |
+|    4 | iomega          |
+|    5 | fujitsu         |
+|    6 | winchester      |
++------+-----------------+
+6 rows in set (0.00 sec)

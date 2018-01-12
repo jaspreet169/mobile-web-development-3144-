@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Applying attributes</title>
+	<style>
+	body{
+	  background-color: #eee;
+	}
+	.form{
+	  background-color: white;
+	  width:460px;
+	  padding-top: 20px;
+	  
+	}
+	.full{
+	  width: 300px;
+	}
+    label
+    {
+      font-size: 15PX;
+      color: :#aaaaaa;
+      font-family: :'Arial';
+    }
+    .btn{
+      background-color: blue;
+      color:white;
+      padding:13px;
+      margin-left:350px;
+ 
+      
+    }
+    #code{
+      padding-left:167px;
+    }
+	</style>
+</head>
+<body>
+<form class="form">
+ <label> NAME *</label> <br>
+  <input class="full" type="text"><br>
+  <label>PROVINCE</label><br>
+  
+  <select class="full" name="Province">
+    <option value="Ontraio">Ontraio</option>
+        <option value="Ontraio">Ontraio</option>
+            <option value="Ontraio">Ontraio</option>
+  </select><br>
+  
+  <label>TELEPHONE *</label><br>
+  <label id="code">POSTAL CODE*</label><br>
+  <input type="text">
+
+  <input type="text"><br>
+   <label>SALARY*</label><br>
+  <input class="full" type="text"><br>
+  <button class="btn">SAVE</button><br>
+</form>
+</body>
+</html>

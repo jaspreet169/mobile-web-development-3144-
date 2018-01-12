@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="index.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+      table
+      {
+        font-family: Arial;
+      
+        border-collapse: collapse;
+       font-size:11px;
+      }
+      .header
+      {
+        color:white;
+       background-color: black;
+       
+      }
+      td{
+        color:#aaaaaa;
+        padding:10px;
+        
+      }
+      th{
+        padding: 10px;
+      }
+      .a{
+        text-decoration-color: none;
+      }
+    </style>
+  </head>
+  <body>
+ <table  class="table">
+   <tr class="header">
+     <th>Name</th>
+     <th>Province</th>
+     <th>Telephone</th>
+     <th>Postal code</th>
+     <th>Salary</th>
+     <th>Action</th>
+     
+   </tr>
+   <tr>
+     <td>John Deo</td>
+     <td>Ontario</td>
+        <td>4161234567</td>
+           <td>M5G2GB</td>
+              <td>40,000.00</td>
+              <td>
+                <a href="">update</a>
+                <a href ="">| Delete</a>
+              </td>
+   </tr>
+   <tr>
+     <td>John Deo</td>
+     <td>Nova Socia</td>
+        <td>4161234567</td>
+           <td>M5G2GB</td>
+              <td>20,000.00</td>
+              <td>
+                <a href="">update</a>
+                <a href ="">| Delete</a>
+              </td>
+   </tr>
+   <tr>
+     <td>John Deo</td>
+     <td>Quebec</td>
+        <td>4161234567</td>
+           <td>M5G2GB</td>
+              <td>40,000.00</td>
+              <td>
+                <a href="">update</a>
+                <a href ="">| Delete</a>
+              </td>
+   </tr>
+   
+   
+ </table>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="index.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+      .a{
+        font-size:45px;
+        border:1px solid blue;
+        padding-top:30px;
+        padding-bottom: 40px;
+        padding-left: 80px;
+        margin-bottom: 170px;
+        margin-left: 40px;
+        
+      }
+      .b{
+        border:1px dashed  red;
+      }
+    </style>
+  </head>
+  <body>
+  <p class="a"> HELLO CLASS</p>
+  <h2 class="b">GOODBYE</h2>
+  </body>
+</html>
